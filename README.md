@@ -1,5 +1,9 @@
 # Bookmarklets
 
+A set of browser utilities for web design and development
+
+---
+
 **Edit Page Content** - Toggles content editing mode on the current webpage
 
 ```
