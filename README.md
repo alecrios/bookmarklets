@@ -8,6 +8,6 @@
 
 * **Go to Website Home** - Sets window location to the homepage of the current website
 
-* **Show Window Size** - Toggles an indicator of the browser window size
-
 * **Show Element Outlines** - Adds a red outline around all elements for debugging layout issues
+
+* **Show Window Size** - Toggles an indicator of the browser window size
