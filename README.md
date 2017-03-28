@@ -2,9 +2,9 @@
 
 * **Edit Page Content** - Toggles content editing mode on the current webpage
 
-* **Get Placeholder Text** - Generates a placeholder image with custom dimensions via https://unsplash.it/
+* **Get Placeholder Text** - Generates 'lorem ipsum' placeholder text of a specified word count
 
-* **Get Placeholder Image** - Generates 'lorem ipsum' placeholder text of a specified word count
+* **Get Placeholder Image** - Generates a placeholder image with custom dimensions via https://unsplash.it/
 
 * **Go to Website Home** - Sets window location to the homepage of the current website
 
