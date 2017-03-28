@@ -1,3 +1,6 @@
+// Get Placeholder Image
+// Generates a placeholder image with custom dimensions via https://unsplash.it/
+
 javascript: (function() {
 	var size = window.prompt('Enter Image Size (e.g. 1920x1080)', '1920x1080');
 	if (size !== null && size.length) {
