@@ -1,7 +1,5 @@
 # Bookmarklets
 
-A set of browser utilities for web development and general power-usage.
-
 &nbsp;
 
 **Edit Page Content** - Toggles content editing mode on the current webpage
