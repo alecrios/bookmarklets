@@ -52,7 +52,7 @@ javascript: (function () {
 		if (epc === null) {
 			var epc = document.createElement('div');
 			epc.setAttribute('id', epcId);
-			epc.innerHTML = 'Editing...';
+			epc.innerHTML = 'Edit Mode';
 			bc.appendChild(epc);
 		}
 	}
