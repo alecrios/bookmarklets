@@ -65,8 +65,4 @@ javascript:(function(){var bcId='bookmarklet-container';var bc=document.getEleme
 * Create a new bookmark.
 * Type in a name for the bookmarklet (e.g. "Get Placeholder Text").
 * Paste in a script as the URL (i.e. `javascript:(function(){...})()`).
-* _Optional:_ Set a keyboard shortcut.
-	* Mac: System Preferences > Keyboard > Shortcuts > App Shortcuts > +
-		1. Select your browser.
-		2. Type in the exact name of the bookmarklet as it appears in the bookmarks menu (note: this requires it to be top-level, not in a folder).
-		3. Enter the keyboard shortcut.
+* _Optional:_ Set a keyboard shortcut (Mac: System Preferences > Keyboard > Shortcuts > App Shortcuts)
