@@ -30,7 +30,7 @@ javascript:(function(){var size=window.prompt('Enter Image Size','1920x1080');if
 **Navigate Within Website** - Sets window location to the specified relative path
 
 ```
-javascript:(function(){var url=window.location.href;window.location=url.substring(0,url.split('/',3).join('/').length)})()
+javascript: (function () { var path = window.prompt('Enter Path', '/'); if (path !== null && path.length) { window.location.href = window.location.origin + path } })()
 ```
 
 &nbsp;
