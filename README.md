@@ -61,8 +61,8 @@ javascript:(function(){var bcId='bookmarklet-container';var bc=document.getEleme
 
 ## Usage
 
-* Open the browser's bookmark manager.
-* Create a new bookmark.
-* Type in a name for the bookmarklet (e.g. "Get Placeholder Text").
-* Paste in a script as the URL (i.e. `javascript:(function(){...})()`).
-* _Optional:_ Set a keyboard shortcut (Mac: System Preferences > Keyboard > Shortcuts > App Shortcuts)
+1. Open the browser's bookmark manager.
+2. Create a new bookmark.
+3. Type in a name for the bookmarklet (e.g. "Get Placeholder Text").
+4. Paste in a script as the URL (i.e. `javascript:(function(){...})()`).
+5. _Optional:_ Set a keyboard shortcut (Mac: System Preferences > Keyboard > Shortcuts > App Shortcuts)
