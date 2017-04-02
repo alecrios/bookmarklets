@@ -2,7 +2,7 @@
 // Generates 'lorem ipsum' placeholder text of a specified word count
 
 javascript: (function() {
-	var wordCount = prompt('Enter Word Count', '250');
+	var wordCount = window.prompt('Enter Word Count', '250');
 	if (wordCount !== null && wordCount.length) {
 		wordCount = parseInt(wordCount.trim());
 		var lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius enim quis nulla mattis, id cursus lectus eleifend. Ut eu pulvinar augue. Donec nulla est, dapibus vulputate placerat eu, tempus eget erat. Nam commodo eu erat iaculis commodo. Sed ultrices sapien vitae neque scelerisque, sit amet feugiat ipsum tristique. Vestibulum et ornare lorem. Phasellus lacinia pellentesque augue. In consequat libero magna, in placerat nibh semper a. Donec rutrum nibh ante, non feugiat enim dapibus efficitur. Quisque hendrerit, massa ac posuere iaculis, odio metus dictum tellus, vel semper mauris nunc eget urna.';
