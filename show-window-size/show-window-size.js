@@ -1,5 +1,5 @@
 // Show Window Size
-// Toggles an indicator of the browser window size
+// Toggles the visibility of a window size indicator
 
 javascript: (function() {
 	var bcId = 'bookmarklet-container';
