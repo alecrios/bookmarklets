@@ -27,7 +27,7 @@ javascript:(function(){var size=window.prompt('Enter Image Size','1920x1080');if
 
 &nbsp;
 
-**Go to Website Home** - Sets window location to the homepage of the current website
+**Navigate Within Website** - Sets window location to the specified relative path
 
 ```
 javascript:(function(){var url=window.location.href;window.location=url.substring(0,url.split('/',3).join('/').length)})()
