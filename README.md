@@ -35,6 +35,14 @@ javascript:(function(){var url=window.location.href;window.location=url.substrin
 
 &nbsp;
 
+**Search Current Website** - Searches Google for the specified search term within the current domain
+
+```
+javascript:(function(){var site=/\/([^\s\/]+)/g.exec(window.location)[1];var query=encodeURIComponent(window.prompt('Enter Search Query',''));if(query!==null&&query.length){window.open(`https://encrypted.google.com/search?q=site:${site}%20${query}`)}})()
+```
+
+&nbsp;
+
 **Show Element Outlines** - Toggles visibility of outlines around all elements for debugging layout issues
 
 ```
