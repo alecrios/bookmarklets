@@ -30,7 +30,7 @@ javascript:(function(){var wordCount=window.prompt('Enter Word Count','250');if(
 **Navigate Within Website** - Sets the window location to the specified relative path
 
 ```
-javascript: (function () { var path = window.prompt('Enter Path', '/'); if (path !== null && path.length) { window.location.href = window.location.origin + path } })()
+javascript:(function(){var path=window.prompt('Enter Path','/');if(path!==null&&path.length){window.location.href=window.location.origin+path}})()
 ```
 
 &nbsp;
@@ -38,7 +38,7 @@ javascript: (function () { var path = window.prompt('Enter Path', '/'); if (path
 **Search Current Website** - Searches Google for the specified search term within the current domain
 
 ```
-javascript: (function () { var query = window.prompt('Enter Search Query', ''); if (query !== null && query.length) { window.open('https://encrypted.google.com/search?q=site:' + window.location.origin + '%20' + encodeURIComponent(query)) } })()
+javascript:(function(){var query=window.prompt('Enter Search Query','');if(query!==null&&query.length){window.open('https://encrypted.google.com/search?q=site:'+window.location.origin+'%20'+encodeURIComponent(query))}})()
 ```
 
 &nbsp;
