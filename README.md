@@ -12,6 +12,15 @@ javascript:(function(){var bcId='bookmarklet-container';var bc=document.getEleme
 
 &nbsp;
 
+#### Get Keycode
+
+Console logs the keycodes of pressed keys
+
+```
+javascript:(function(){document.addEventListener('keyup',function(event){console.log(`${event.key}(${event.which})`)})})();
+```
+
+&nbsp;
 
 #### Get Placeholder Image
 
