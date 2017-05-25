@@ -7,7 +7,7 @@ javascript: (function() {
 	if (style === null) {
 		style = document.createElement('style');
 		style.setAttribute('id', id);
-		style.innerHTML = '* {outline: 1px solid red;}';
+		style.innerHTML = '* {outline: 1px solid red !important;}';
 		document.head.appendChild(style);
 	} else {
 		document.head.removeChild(style);
