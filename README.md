@@ -73,10 +73,10 @@ javascript:(function(){var id='show-element-outlines';var style=document.getElem
 &nbsp;
 
 #### Show Window Size
-Toggles the visibility of a window size indicator
+Replaces the document title with the window dimensions. Updates as the window resizes. Reverts to original text if run a second time.
 
 ```
-javascript:(function(){var bcId='bookmarklet-container';var bc=document.getElementById(bcId);var swsId='bookmarklet-show-window-size';var sws=document.getElementById(swsId);if(bc!==null&&sws!==null){bc.removeChild(sws);if(bc.childNodes.length===0){document.body.removeChild(bc)}}else{if(bc===null){var bc=document.createElement('div');bc.setAttribute('id',bcId);var style=document.querySelector('style');if(style===null){style=document.createElement('style');document.head.appendChild(style)}style.innerHTML=style.innerHTML+` #${bcId}{position:fixed;top:0;left:0;z-index:9999;padding:8px}#${bcId}>div{margin-bottom:8px;padding:6px 8px;background-color:#000;color:#fff;font-family:Helvetica,sans-serif;font-size:12px;line-height:12px;letter-spacing:1px}`;document.body.appendChild(bc)}var sws=document.createElement('div');sws.setAttribute('id',swsId);sws.innerHTML=window.innerWidth+' &times; '+window.innerHeight;window.onresize=function(){sws.innerHTML=window.innerWidth+' &times; '+window.innerHeight};bc.appendChild(sws)}})()
+javascript:(function(){window.showWindowSize=window.showWindowSize||{};if(!window.showWindowSize.isActive){window.showWindowSize.isActive=!0;window.showWindowSize.originalTitle=document.title;window.showWindowSize.update=()=>{document.title=`${window.innerWidth} × ${window.innerHeight}`};window.showWindowSize.update();window.addEventListener('resize',window.showWindowSize.update)}else{window.showWindowSize.isActive=!1;document.title=window.showWindowSize.originalTitle;window.removeEventListener('resize',window.showWindowSize.update)}})()
 ```
 
 &nbsp;
