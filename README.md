@@ -12,12 +12,12 @@ javascript:(function(){var bcId='bookmarklet-container';var bc=document.getEleme
 
 &nbsp;
 
-#### Get Keycode
+#### Show Key Code
 
-Console logs the keycodes of pressed keys
+Replaces the document title with the key codes of pressed keys. Reverts to original text if run a second time.
 
 ```
-javascript:(function(){document.addEventListener('keyup',function(event){console.log(`${event.key}(${event.which})`)})})();
+javascript:(function(){window.showKeyCode=window.showKeyCode||{};if(!window.showKeyCode.isActive){window.showKeyCode.isActive=!0;window.showKeyCode.originalTitle=document.title;window.showKeyCode.update=(event)=>{document.title=`${event.keyCode} ("${event.key}")`};document.title='Ready for key input...';window.addEventListener('keyup',window.showKeyCode.update)}else{window.showKeyCode.isActive=!1;document.title=window.showKeyCode.originalTitle;window.removeEventListener('keyup',window.showKeyCode.update)}})()
 ```
 
 &nbsp;
