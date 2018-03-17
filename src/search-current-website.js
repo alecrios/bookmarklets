@@ -1,6 +1,3 @@
-// Search Current Website
-// Searches Google for the specified search term within the current domain
-
 javascript: (function() {
 	var query = window.prompt('Enter Search Query', '');
 	if (query !== null && query.length) {

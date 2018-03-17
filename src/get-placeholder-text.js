@@ -1,6 +1,3 @@
-// Get Placeholder Text
-// Generates 'lorem ipsum' placeholder text of a specified word count
-
 javascript: (function() {
 	var wordCount = window.prompt('Enter Word Count', '250');
 	if (wordCount !== null && wordCount.length) {

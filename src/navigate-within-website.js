@@ -1,6 +1,3 @@
-// Navigate Within Website
-// Sets the window location to the specified relative path
-
 javascript: (function() {
 	var path = window.prompt('Enter Path', '/');
 	if (path !== null && path.length) {

@@ -1,6 +1,3 @@
-// Show Element Outlines
-// Toggles the visibility of an outline around all elements for debugging layout issues
-
 javascript: (function() {
 	var id = 'show-element-outlines';
 	var style = document.getElementById(id);

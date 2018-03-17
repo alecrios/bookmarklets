@@ -1,6 +1,3 @@
-// Edit Page Content
-// Toggles content editing mode on the current webpage
-
 javascript: (function () {
 	var bcId = 'bookmarklet-container';
 	var bc = document.getElementById(bcId);
