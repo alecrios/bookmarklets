@@ -64,10 +64,10 @@ javascript:(function(){var query=window.prompt('Enter Search Query','');if(query
 
 #### Show Element Outlines
 
-Toggles the visibility of an outline around all elements for debugging layout issues
+Toggles the visibility of a red outline around all elements to help visualize layout.
 
 ```
-javascript:(function(){var id='show-element-outlines';var style=document.getElementById(id);if(style===null){style=document.createElement('style');style.setAttribute('id',id);style.innerHTML='* {outline: 1px solid red !important;}';document.head.appendChild(style)}else{document.head.removeChild(style)}})()
+javascript:(function(){window.showElementOutlines=window.showElementOutlines||{};if(!window.showElementOutlines.isActive){window.showElementOutlines.isActive=!0;window.showElementOutlines.style=document.createElement('style');window.showElementOutlines.style.innerHTML='* {outline: 1px solid red !important;}';document.head.appendChild(window.showElementOutlines.style)}else{window.showElementOutlines.isActive=!1;document.head.removeChild(window.showElementOutlines.style)}})()
 ```
 
 &nbsp;
