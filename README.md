@@ -24,10 +24,10 @@ javascript:(function(){window.showKeyCode=window.showKeyCode||{};if(!window.show
 
 #### Get Placeholder Image
 
-Generates a placeholder image with custom dimensions (uses https://unsplash.it/).
+Generates a placeholder image with custom dimensions (uses http://picsum.photos/).
 
 ```
-javascript:(function(){var size=window.prompt('Enter Image Size','1920x1080');if(size!==null&&size.length){size=size.toLowerCase().replace(/\s+/g,'').split('x',2);window.open(`https://unsplash.it/${size[0]}/${size[1]}/?random`)}})()
+javascript:(function(){let isRepeatRequest=window.location.host==='picsum.photos';let previousDimensions=window.location.pathname.split('/');let previousWidth=isRepeatRequest?previousDimensions[1]:null;let previousHeight=isRepeatRequest?previousDimensions[2]:null;let defaultValue=`${previousWidth || 1920}x${previousHeight || 1080}`;let dimensions=window.prompt('Image dimensions',defaultValue).split('x');let width=Number(dimensions[0]);let height=Number(dimensions[1]);if(!Number.isInteger(width)||!Number.isInteger(height)){window.alert('Invalid image dimensions');return}let url=`https://picsum.photos/${width}/${height}/?random`;isRepeatRequest?window.location=url:window.open(url)})();
 ```
 
 &nbsp;
