@@ -12,16 +12,6 @@ javascript:(function(){var bcId='bookmarklet-container';var bc=document.getEleme
 
 &nbsp;
 
-#### Show Key Code
-
-Replaces the document title with the key codes of pressed keys. Reverts to original text if run a second time.
-
-```
-javascript:(function(){window.showKeyCode=window.showKeyCode||{};if(!window.showKeyCode.isActive){window.showKeyCode.isActive=!0;window.showKeyCode.originalTitle=document.title;window.showKeyCode.update=(event)=>{document.title=`${event.keyCode} ("${event.key}")`};document.title='Ready for key input...';window.addEventListener('keyup',window.showKeyCode.update)}else{window.showKeyCode.isActive=!1;document.title=window.showKeyCode.originalTitle;window.removeEventListener('keyup',window.showKeyCode.update)}})()
-```
-
-&nbsp;
-
 #### Get Placeholder Image
 
 Generates a placeholder image with custom dimensions (uses http://picsum.photos/).
@@ -38,26 +28,6 @@ Generates 'lorem ipsum' placeholder text of a specified word count.
 
 ```
 javascript:(function(){var wordCount=window.prompt('Enter Word Count','250');if(wordCount!==null&&wordCount.length){wordCount=parseInt(wordCount.trim());var lorem='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius enim quis nulla mattis, id cursus lectus eleifend. Ut eu pulvinar augue. Donec nulla est, dapibus vulputate placerat eu, tempus eget erat. Nam commodo eu erat iaculis commodo. Sed ultrices sapien vitae neque scelerisque, sit amet feugiat ipsum tristique. Vestibulum et ornare lorem. Phasellus lacinia pellentesque augue. In consequat libero magna, in placerat nibh semper a. Donec rutrum nibh ante, non feugiat enim dapibus efficitur. Quisque hendrerit, massa ac posuere iaculis, odio metus dictum tellus, vel semper mauris nunc eget urna.';var lorem=lorem.split(' ');var result='';var j=Math.floor(Math.random()*lorem.length);for(var i=0;i<wordCount;i++){if(j>=lorem.length){j=0}if(i==0){result+=lorem[j].charAt(0).toUpperCase()+lorem[j].slice(1)+' '}else{result+=lorem[j]+' '}j++}result=result.slice(0,-1);if(result.slice(-1)==','){result=result.slice(0,-1)+'.'}else if(result.slice(-1)!='.'){result=result+'.'}var newDocument=window.open().document;newDocument.title=wordCount+' words';style=document.createElement('style');style.innerHTML=`body{margin:0;padding:32px;display:flex;align-items:center;justify-content:center}#text{font-family:sans-serif;font-size:16px;line-height:24px;max-width:512px}`;var textDiv=document.createElement('div');textDiv.setAttribute('id','text');textDiv.innerHTML=result;newDocument.head.appendChild(style);newDocument.body.appendChild(textDiv)}})()
-```
-
-&nbsp;
-
-#### Navigate Within Website
-
-Sets the window location to the specified relative path.
-
-```
-javascript:(function(){var path=window.prompt('Enter Path','/');if(path!==null&&path.length){window.location.href=window.location.origin+path}})()
-```
-
-&nbsp;
-
-#### Search Current Website
-
-Searches Google for the specified search term within the current domain.
-
-```
-javascript:(function(){var query=window.prompt('Enter Search Query','');if(query!==null&&query.length){window.open('https://encrypted.google.com/search?q=site:'+window.location.origin+'%20'+encodeURIComponent(query))}})()
 ```
 
 &nbsp;
@@ -87,6 +57,6 @@ javascript:(function(){window.showWindowSize=window.showWindowSize||{};if(!windo
 
 1. Open the browser's bookmark manager.
 2. Create a new bookmark.
-3. Type in a name for the bookmarklet, e.g. "Get Placeholder Text".
-4. Paste in a script as the URL, i.e. `javascript:(function(){...})()`.
+3. Type in a name for the bookmarklet, _e.g._ "Get Placeholder Text".
+4. Paste in a script as the URL, _e.g._ `javascript:(function(){...})()`.
 5. Optionally set a keyboard shortcut (_Mac: System Preferences > Keyboard > Shortcuts > App Shortcuts_).
