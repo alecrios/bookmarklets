@@ -38,7 +38,7 @@ javascript:(function(){if(document.body.contentEditable=='true'||document.design
 **Clear Cookies** - Clears cookies for the current domain.
 
 ```
-javascript:(function(){document.cookie.split(';').forEach((cookie)=>{document.cookie=cookie.replace(/^ +/,'').replace(/=.*/,`=;expires=${new Date().toUTCString()};path=/`)})}())
+javascript:(function(){document.cookie.split(';').forEach((cookie)=>{document.cookie=cookie.replace(/^ +/,'').replace(/=.*/,`=;expires=${new Date().toUTCString()};path=/`)});window.confirm('Cookies have been cleared.')}())
 ```
 
 &nbsp;
@@ -46,7 +46,7 @@ javascript:(function(){document.cookie.split(';').forEach((cookie)=>{document.co
 **Clear Local Storage** - Clears local storage for the current domain.
 
 ```
-javascript:(function(){localStorage.clear()}())
+javascript:(function(){localStorage.clear();window.confirm('Local storage has been cleared.')}())
 ```
 
 &nbsp;

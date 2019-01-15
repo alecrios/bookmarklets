@@ -4,4 +4,5 @@ javascript: (function() {
 			.replace(/^ +/, '')
 			.replace(/=.*/, `=;expires=${new Date().toUTCString()};path=/`);
 	});
+	window.confirm('Cookies have been cleared.');
 }());
