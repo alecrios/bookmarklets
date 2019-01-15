@@ -35,6 +35,14 @@ javascript:(function(){if(document.body.contentEditable=='true'||document.design
 
 &nbsp;
 
+**Clear Local Storage** - Deletes all data in local storage.
+
+```
+javascript:(function(){localStorage.clear()}())
+```
+
+&nbsp;
+
 ## Usage
 
 1. Open the browser's bookmark manager.

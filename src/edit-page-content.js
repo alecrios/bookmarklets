@@ -1,4 +1,4 @@
-javascript: (function () {
+javascript: (function() {
 	if (document.body.contentEditable == 'true' || document.designMode == 'on') {
 		document.body.removeAttribute('spellcheck');
 		document.body.removeAttribute('contentEditable');
