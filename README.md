@@ -11,14 +11,6 @@ javascript:(function(){window.showElementOutlines=window.showElementOutlines||{}
 
 &nbsp;
 
-**Show Window Size** - Toggles the visibility of the window dimensions in the document title.
-
-```
-javascript:(function(){window.showWindowSize=window.showWindowSize||{};if(!window.showWindowSize.isActive){window.showWindowSize.isActive=!0;window.showWindowSize.originalTitle=document.title;window.showWindowSize.update=()=>{document.title=`${window.innerWidth} × ${window.innerHeight}`};window.showWindowSize.update();window.addEventListener('resize',window.showWindowSize.update)}else{window.showWindowSize.isActive=!1;document.title=window.showWindowSize.originalTitle;window.removeEventListener('resize',window.showWindowSize.update)}})()
-```
-
-&nbsp;
-
 **Edit Page Content** - Toggles content editing mode on the current webpage.
 
 ```
