@@ -35,7 +35,15 @@ javascript:(function(){if(document.body.contentEditable=='true'||document.design
 
 &nbsp;
 
-**Clear Local Storage** - Deletes all data in local storage.
+**Clear Cookies** - Clears cookies for the current domain.
+
+```
+javascript:(function(){document.cookie.split(';').forEach((cookie)=>{document.cookie=cookie.replace(/^ +/,'').replace(/=.*/,`=;expires=${new Date().toUTCString()};path=/`)})}())
+```
+
+&nbsp;
+
+**Clear Local Storage** - Clears local storage for the current domain.
 
 ```
 javascript:(function(){localStorage.clear()}())
