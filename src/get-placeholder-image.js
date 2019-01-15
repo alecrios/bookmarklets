@@ -7,7 +7,11 @@ javascript: (function() {
 
 	let defaultValue = `${previousWidth || 1920}x${previousHeight || 1080}`;
 
-	let dimensions = window.prompt('Image dimensions', defaultValue).split('x');
+	let dimensions = window.prompt('Image dimensions', defaultValue);
+
+	if (dimensions === null) return;
+
+	dimensions = dimensions.split('x');
 	let width = Number(dimensions[0]);
 	let height = Number(dimensions[1]);
 

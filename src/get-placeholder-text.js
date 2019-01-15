@@ -1,5 +1,9 @@
 javascript: (function() {
-	let wordCount = Number(window.prompt('Word count', '250'));
+	let wordCount = window.prompt('Word count', '250');
+
+	if (wordCount === null) return;
+
+	wordCount = Number(wordCount);
 
 	if (!Number.isInteger(wordCount) || wordCount === 0) {
 		window.alert('Invalid word count');
