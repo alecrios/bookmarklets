@@ -7,35 +7,35 @@ javascript: (function() {
 		getElementSize.style = document.createElement('style');
 		getElementSize.style.innerText = `
 			.get-element-size {
-				display: none;
-				pointer-events: none;
 				z-index: 1000000000;
 				position: absolute;
 				top: 0;
 				left: 0;
+				opacity: 0;
+				pointer-events: none;
 				outline: 0 !important;
 			}
 
 			.get-element-size__overlay {
-				background-color: rgba(255, 0, 0, .25);
 				width: 1px;
 				height: 1px;
-				outline: 0 !important;
+				background-color: rgba(255, 0, 0, .25);
 				transform-origin: 0 0;
 				transition: transform 50ms ease;
+				outline: 0 !important;
 			}
 
 			.get-element-size__label {
-				background-color: rgba(0, 0, 0, 1);
-				color: rgba(255, 255, 255, 1);
 				padding: .25rem .5rem;
-				border-radius: .25rem;
 				border: .125rem solid rgba(255, 255, 255, 1);
-				font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+				border-radius: .25rem;
+				background-color: rgba(0, 0, 0, 1);
+				font-family: BlinkMacSystemFont, 'Segoe UI', sans-serif;
+				color: rgba(255, 255, 255, 1);
 				font-size: 1rem;
 				line-height: 1.5rem;
-				outline: 0 !important;
 				transform-origin: 0 0;
+				outline: 0 !important;
 			}
 		`;
 		document.head.appendChild(getElementSize.style);
@@ -55,21 +55,34 @@ javascript: (function() {
 		getElementSize.update = (event) => {
 			let rect = event.target.getBoundingClientRect();
 
-			getElementSize.overlay.style.transform = `translate(${window.pageXOffset + rect.left}px, ${window.pageYOffset + rect.top}px) scale(${rect.width}, ${rect.height})`;
+			let overlayX = window.pageXOffset + rect.left;
+			let overlayY = window.pageYOffset + rect.top;
+			let overlayWidth = rect.width;
+			let overlayHeight = rect.height;
+			getElementSize.overlay.style.transform = `
+				translate(${overlayX}px, ${overlayY}px)
+				scale(${overlayWidth}, ${overlayHeight})
+			`;
 
-			getElementSize.label.innerText = `${Math.round(rect.width)} × ${Math.round(rect.height)}`;
-			getElementSize.label.style.transform = `translate(${window.pageXOffset + event.clientX + 8}px, ${window.pageYOffset + event.clientY + 16}px)`;
+			let labelX = window.pageXOffset + event.clientX + 8;
+			let labelY = window.pageYOffset + event.clientY + 16;
+			getElementSize.label.style.transform = `translate(${labelX}px, ${labelY}px)`;
+
+			let elementWidth = Math.round(rect.width);
+			let elementHeight = Math.round(rect.height);
+			getElementSize.label.innerText = `${elementWidth} × ${elementHeight}`;
+
+			getElementSize.container.style.opacity = '1';
 		};
 	}
 
 	if (getElementSize.isActive) {
 		getElementSize.isActive = false;
-		getElementSize.container.style.display = 'none';
 		document.removeEventListener('mousemove', getElementSize.update);
+		getElementSize.container.style.opacity = '0';
 		return;
 	}
 
 	getElementSize.isActive = true;
-	getElementSize.container.style.display = 'block';
 	document.addEventListener('mousemove', getElementSize.update);
 }());
